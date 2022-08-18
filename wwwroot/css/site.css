@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: rgb(5, 5, 54);
+  margin-bottom: 60px;
+}
+.cont-comodines{
+  width: 25%;
+  margin-right: 0%;
+  margin-left: 0%;
+}
+.imgComodin{
+  width: 25%;
+}
+.logoNav{
+  width: 10%;
+  height: auto;
+}
+
+.cont-preg-resp{
+  background-color: rgb(10, 0, 104);
+  border: 5px solid #FFB949;
+}
+
+.preg-resp{
+  color: azure;
+  font-weight: bold;
+  text-align: center;
+}
+
+.premioActual
+{
+  background-color: #FFB949 !important;
+  color:rgb(5, 5, 54);
+}
