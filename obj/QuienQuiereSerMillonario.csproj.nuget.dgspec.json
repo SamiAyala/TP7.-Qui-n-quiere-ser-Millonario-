@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47128045\\tp7\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {}
+    "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47128045\\tp7\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {
+    "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47128045\\tp7\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
+        "projectUniqueName": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
         "projectName": "QuienQuiereSerMillonario",
-        "projectPath": "C:\\Users\\47128045\\tp7\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
+        "projectPath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
         "packagesPath": "C:\\Users\\47128045\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47128045\\tp7\\TP7.QuienQuiereSerMillonario\\obj\\",
+        "outputPath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

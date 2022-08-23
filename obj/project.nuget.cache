@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xCBtLm7bR7MDZLHbGfmqL/5AYn+Nd3QoSbNeB0njFqpYygyUpVzPbhALRKjhSNGXeNaZ12k/2ezOyeama1TL4g==",
+  "dgSpecHash": "tgTw4AGB6gtKxT9sFP7wI3VBd1pq8uv85kRAkgxFn0QuGjp9s26kx8PHBBGhtWOztJzUjv4yZZ+RzkMaCBGU5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\47128045\\tp7\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
+  "projectFilePath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\47128045\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\47128045\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

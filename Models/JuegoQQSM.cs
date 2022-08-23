@@ -27,7 +27,21 @@ namespace QuienQuiereSerMillonario.Models
             using(SqlConnection db=new SqlConnection(_connectionString)){
                 db.Execute(sql,new {Nombre=pNombre,FechaHora=pFechaHora});
             }
-            _Player=new Jugador(0,_PozoAcumuladoSeguro,pNombre,pFechaHora,_ComodinDobleChance,_Comodin5050,_ComodinSaltear);
+            _Player = new Jugador(0,_PozoAcumuladoSeguro,pNombre,pFechaHora,_ComodinDobleChance,_Comodin5050,_ComodinSaltear);
+        }
+        public void ListarPreguntas(){
+            using(SqlConnection db=new SqlConnection(_connectionString)){
+                string sql="SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=1 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=2 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=3 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=4 ORDER BY NEWID()";
+                List<Pregunta> ListPreguntas = db.Query<Pregunta>(sql).ToList();
+            }
+        }
+        public void ObtenerRespuestas()
+        {
+            using(SqlConnection db=new SqlConnection(_connectionString))
+            {
+                string sql="SELECT * FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta=pIdPregunta";
+                List<Respuesta> ListRespuestas = db.Query<Respuesta>(sql).ToList();
+            }
         }
     }
 }
