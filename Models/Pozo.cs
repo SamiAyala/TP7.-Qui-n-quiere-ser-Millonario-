@@ -6,12 +6,12 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class Pozo{
-    private int _Importe;
-    private bool _ValorSeguro;
+    private int _importe;
+    private bool _valorSeguro;
 
     public Pozo(int Importe, bool ValorSeguro)
     {
-        _Importe=Importe;
-        _ValorSeguro=ValorSeguro;
+        _importe=Importe;
+        _valorSeguro=ValorSeguro;
     }
 }

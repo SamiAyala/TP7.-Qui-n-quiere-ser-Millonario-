@@ -8,7 +8,7 @@ using Dapper;
 public class Respuesta{
 
     private int _idRespuesta, _idPregunta;
-    private char _OpcionRespuesta;
+    private char _opcionRespuesta;
     private string _texto;
     private bool _correcta;
 
@@ -19,7 +19,7 @@ public class Respuesta{
     {
         _idRespuesta=idRespuesta;
         _idPregunta=idPregunta;
-        _OpcionRespuesta=OpcionRespuesta;
+        _opcionRespuesta=OpcionRespuesta;
         _texto=texto;
         _correcta=correcta;
     }
