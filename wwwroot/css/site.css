@@ -12,9 +12,14 @@ html {
   position: relative;
   min-height: 100%;
 }
+.text-center{
+  background: url(/assets/fondo2.jpg)no-repeat;
+  background-size: auto;
+}
 
 body {
-  background-color: rgb(5, 5, 54);
+  background: url(/assets/fondo.jpg) no-repeat;
+  background-size: cover;
   margin-bottom: 60px;
 }
 .cont-comodines{
