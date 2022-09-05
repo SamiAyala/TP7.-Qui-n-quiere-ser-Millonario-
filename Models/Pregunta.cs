@@ -17,4 +17,17 @@ public class Pregunta{
         _texto=texto;
         _nivelDificultad=nivelDificultad;
     }
+
+    public int idPregunta
+    {
+        get{return _idPregunta;}
+    }
+    public string texto
+    {
+        get{return _texto;}
+    }
+    public int nivelDificultad
+    {
+        get{return _nivelDificultad;}
+    }
 }

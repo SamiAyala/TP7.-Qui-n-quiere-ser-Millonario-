@@ -23,11 +23,14 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Juego()
+    public IActionResult Juego(string nombre)
     {
+        JuegoQQSM.iniciarJuego(nombre);
+        ViewBag.jug = JuegoQQSM.DevolverJugador();
+        ViewBag.listPozo = JuegoQQSM.DevolverPozo();
+        ViewBag.listPreg = JuegoQQSM.ListarPreguntas();
         return View();
     }
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

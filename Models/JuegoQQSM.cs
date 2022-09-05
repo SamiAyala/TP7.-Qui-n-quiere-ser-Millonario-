@@ -7,33 +7,34 @@ using Dapper;
 namespace QuienQuiereSerMillonario.Models
 {
     public static class JuegoQQSM{
-        private static int _PreguntaActual,_PosicionPozo,_PozoAcumuladoSeguro,_pozoAcumulado;
-        private static char _RespuestaCorrectaActual;
-        private static bool _Comodin5050,_ComodinDobleChance,_ComodinSaltear;
-        private static List<Pozo> _ListaPozo= new List<Pozo>();
-        private static Jugador _Player;
-        private static string _connectionString=@"Server=A-PHZ2-CIDI-053\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
+        private static int _preguntaActual,_posicionPozo,_pozoAcumuladoSeguro,_pozoAcumulado;
+        private static char _respuestaCorrectaActual;
+        private static bool _comodin5050,_comodinDobleChance,_comodinSaltear;
+        private static List<Pozo> _listaPozo;
+        private static Jugador _player;
+        private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
 
         public static void iniciarJuego(string pNombre){
-            _PreguntaActual=1;
-            _RespuestaCorrectaActual='\0';
-            _PosicionPozo=0;
-            _PozoAcumuladoSeguro=0;
+            _preguntaActual=1;
+            _respuestaCorrectaActual='\0';
+            _posicionPozo=0;
+            _pozoAcumuladoSeguro=0;
             _pozoAcumulado=0;
-            _Comodin5050=true; _ComodinDobleChance=true;_ComodinSaltear=true;
-            _ListaPozo=new List<Pozo>(){new Pozo(250, false), new Pozo(500, false), new Pozo(1000, false),new Pozo(5000, true),new Pozo(10000, false),new Pozo(25000, false),new Pozo(50000, false),new Pozo(100000, true),new Pozo(250000, false),new Pozo(500000, false),new Pozo(1000000, false)};
+            _comodin5050=true; _comodinDobleChance=true;_comodinSaltear=true;
+            _listaPozo=new List<Pozo>(){new Pozo(250, false), new Pozo(500, false), new Pozo(1000, false),new Pozo(2500, true),new Pozo(5000, false),new Pozo(7500, false),new Pozo(10000, false),new Pozo(20000, true),new Pozo(30000, false),new Pozo(50000, false),new Pozo(70000, false),new Pozo(100000, true),new Pozo(130000, false),new Pozo(180000, false),new Pozo(300000, false),new Pozo(50000, true),new Pozo(750000, false),new Pozo(1000000, false),new Pozo(1500000, false),new Pozo(2000000, true)};
+            _listaPozo.Reverse();
             DateTime pFechaHora=DateTime.Now;
-            string sql="INSERT INTO dbo.Jugadores(Nombre,FechaHora) VALUES (@Nombre,@FechaHora, 0, 1, 1, 1)";
+            string sql="INSERT INTO dbo.Jugadores(Nombre,FechaHora,PozoGanado, ComodinDobleChance, Comodin50, ComodinSaltear) VALUES (@Nombre,@FechaHora, 0, 1, 1, 1)";
             using(SqlConnection db=new SqlConnection(_connectionString)){
                 db.Execute(sql,new {Nombre=pNombre,FechaHora=pFechaHora});
             }
-            _Player = new Jugador(0, _PozoAcumuladoSeguro,pNombre,pFechaHora,_ComodinDobleChance,_Comodin5050,_ComodinSaltear);
+            _player = new Jugador(0, _pozoAcumuladoSeguro,pNombre,pFechaHora,_comodinDobleChance,_comodin5050,_comodinSaltear);
         }
         public static List<Pregunta> ListarPreguntas(){
             using(SqlConnection db=new SqlConnection(_connectionString)){
                 string sql="SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=1 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=2 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=3 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=4 ORDER BY NEWID()";
-                List<Pregunta> ListPreguntas = db.Query<Pregunta>(sql).ToList();
-                return ListPreguntas;
+                List<Pregunta> listPreguntas = db.Query<Pregunta>(sql).ToList();
+                return listPreguntas;
             }
         }
         public static List<Respuesta> ObtenerRespuestas()
@@ -41,22 +42,54 @@ namespace QuienQuiereSerMillonario.Models
             using(SqlConnection db=new SqlConnection(_connectionString))
             {
                 string sql="SELECT * FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta=pIdPregunta";
-                List<Respuesta> ListRespuestas = db.Query<Respuesta>(sql).ToList();
+                List<Respuesta> listRespuestas = db.Query<Respuesta>(sql).ToList();
                 sql = "SELECT OpcionRespuesta FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta=pIdPregunta WHERE Correcta = 1";
-                _RespuestaCorrectaActual = db.QueryFirstOrDefault<char>(sql);
-                return ListRespuestas;
+                _respuestaCorrectaActual = db.QueryFirstOrDefault<char>(sql);
+                return listRespuestas;
             }
         }
-        /*
+        
         public static bool ChequearRespuesta(char opcion, char opcionComodin){
-            if (opcionComodin != null) 
-            if (opcion == _RespuestaCorrectaActual || opcionComodin == _RespuestaCorrectaActual)
+            if (opcionComodin != null) _player.comodinDobleChance = false;
+            if (opcion == _respuestaCorrectaActual || opcionComodin == _respuestaCorrectaActual)
             {
-                if (_ListaPozo[_PosicionPozo]._valorSeguro) _PozoAcumuladoSeguro = _ListaPozo[_PosicionPozo]._importe;
-                _PosicionPozo++;
+                if (_listaPozo[_posicionPozo].valorSeguro) _pozoAcumuladoSeguro = _listaPozo[_posicionPozo].importe;
+                _posicionPozo++;
                 return true;
+            }else {
+                return false;
             }
         }
-        */
+        public static List<Pozo> DevolverPozo(){
+            return _listaPozo;
+        }
+        public static int DevolverPosPozo(){
+           return _posicionPozo; 
+        }
+        public static List<char> Comodin5050(){
+            if(_player.comodin5050){
+                _player.comodin5050 = false;
+                int x = 0;
+                List<char> ListChar = new List<char>();
+                List<Respuesta> ListRespuesta = JuegoQQSM.ObtenerRespuestas();
+                for(int i = 0; i<ListChar.Count() && x<2; i++){
+                    if(ListRespuesta[i].correcta){
+                        ListChar.Add(ListRespuesta[i].opcionRespuesta);
+                        x++;
+                    }
+                }
+                return ListChar;
+            }
+            return null;
+        }
+        public static void ComodinSaltear(){
+            if (_player.comodinSaltear){
+                _player.comodinSaltear = false;
+                _preguntaActual++;
+            }
+        }
+        public static Jugador DevolverJugador() {
+            return _player;
+        } 
     }
 }

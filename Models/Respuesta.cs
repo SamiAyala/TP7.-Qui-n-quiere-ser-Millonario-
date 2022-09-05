@@ -23,4 +23,25 @@ public class Respuesta{
         _texto=texto;
         _correcta=correcta;
     }
+
+    public int idRespuesta
+    {
+        get{return _idRespuesta;}
+    }
+    public int idPregunta
+    {
+        get{return _idPregunta;}
+    }
+    public char opcionRespuesta
+    {
+        get{return _opcionRespuesta;}
+    }
+    public string texto
+    {
+        get{return _texto;}
+    }
+    public bool correcta
+    {
+        get{return _correcta;}
+    }
 }

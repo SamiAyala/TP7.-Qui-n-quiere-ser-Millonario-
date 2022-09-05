@@ -14,4 +14,13 @@ public class Pozo{
         _importe=Importe;
         _valorSeguro=ValorSeguro;
     }
+
+    public int importe
+    {
+        get{return _importe;}
+    }
+    public bool valorSeguro
+    {
+        get{return _valorSeguro;}
+    }
 }
