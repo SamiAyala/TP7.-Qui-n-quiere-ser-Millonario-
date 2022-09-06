@@ -21,13 +21,16 @@ public class Pregunta{
     public int idPregunta
     {
         get{return _idPregunta;}
+        set{ _idPregunta=value;}
     }
-    public string texto
+    public string textoPregunta
     {
         get{return _texto;}
+        set{_texto=value;}
     }
     public int nivelDificultad
     {
         get{return _nivelDificultad;}
+        set{ _nivelDificultad=value;}
     }
 }

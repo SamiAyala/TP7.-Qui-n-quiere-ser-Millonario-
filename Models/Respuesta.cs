@@ -27,21 +27,26 @@ public class Respuesta{
     public int idRespuesta
     {
         get{return _idRespuesta;}
+        set{_idRespuesta = value;}
     }
     public int idPregunta
     {
         get{return _idPregunta;}
+        set{_idPregunta = value;}
     }
     public char opcionRespuesta
     {
         get{return _opcionRespuesta;}
+        set{_opcionRespuesta = value;}
     }
-    public string texto
+    public string textoRespusta//CAMBIAR NOMBRE; TIENEN QUE SER IGUALES A LA BASE DE DATOS
     {
         get{return _texto;}
+        set{_texto = value;}
     }
     public bool correcta
     {
         get{return _correcta;}
+        set{_correcta = value;}
     }
 }

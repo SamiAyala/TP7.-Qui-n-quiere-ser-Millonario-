@@ -12,10 +12,10 @@ namespace QuienQuiereSerMillonario.Models
         private static bool _comodin5050,_comodinDobleChance,_comodinSaltear;
         private static List<Pozo> _listaPozo;
         private static Jugador _player;
-        private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
+        private static string _connectionString=@"Server=A-PHZ2-CIDI-026;DataBase=JuegoQQSM;Trusted_Connection=True;";
 
         public static void iniciarJuego(string pNombre){
-            _preguntaActual=1;
+            _preguntaActual=0;
             _respuestaCorrectaActual='\0';
             _posicionPozo=0;
             _pozoAcumuladoSeguro=0;
@@ -32,7 +32,7 @@ namespace QuienQuiereSerMillonario.Models
         }
         public static List<Pregunta> ListarPreguntas(){
             using(SqlConnection db=new SqlConnection(_connectionString)){
-                string sql="SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=1 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=2 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=3 ORDER BY NEWID() SELECT TOP 4 * FROM Preguntas WHERE NivelDificultad=4 ORDER BY NEWID()";
+                string sql="SELECT TOP 4 *,NEWID() FROM Preguntas WHERE NivelDificultad=1 UNION SELECT TOP 4 *,NEWID() FROM Preguntas WHERE NivelDificultad=2 UNION SELECT TOP 4 *,NEWID() FROM Preguntas WHERE NivelDificultad=3 UNION SELECT TOP 4 *,NEWID() FROM Preguntas WHERE NivelDificultad=4 ORDER BY NivelDificultad,NEWID()";
                 List<Pregunta> listPreguntas = db.Query<Pregunta>(sql).ToList();
                 return listPreguntas;
             }

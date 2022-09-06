@@ -22,7 +22,8 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    
+    [HttpPost]
     public IActionResult Juego(string nombre)
     {
         JuegoQQSM.iniciarJuego(nombre);
