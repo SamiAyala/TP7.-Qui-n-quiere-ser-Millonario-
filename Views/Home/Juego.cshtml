@@ -1,10 +1,9 @@
 <nav class="navbar">
-    <a class="logoNav" href='@Url.Action("Index", "Home")'>
-      <img src="/assets/logo.webp" class="img-fluid">
-    </a>
+    <a></a>
     <div class="cont-comodines">
-        <img src="/assets/comodin1.png" class="imgComodin mx-5">
+        <img src="/assets/comodin1.png" class="imgComodin">
         <img src="/assets/comodin2.png" class="imgComodin">
+        <img src="/assets/comodin3.png" class="imgComodin">
     </div>
 </nav>
 <div class="row justify-content-center">
@@ -34,7 +33,7 @@
     </div>
 </div>
 
-<table class="table position-absolute top-50 end-0 translate-middle-y text-center" style="width:10%; margin-right:2%; background-color: rgb(5, 5, 54); color: #FFFFFF; border: 3px solid #FFB949;">
+<table class="table position-absolute top-50 start-0 translate-middle-y text-center" style="width:10%; margin-left:2%; background-color: rgb(5, 5, 54); color: #FFFFFF; border: 3px solid #FFB949;">
     <tbody>
         @foreach (Pozo p in @ViewBag.listPozo)
         {

@@ -482,19 +482,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nacho\\.nuget\\packages\\": {}
+    "C:\\Users\\47128045\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nacho\\Downloads\\TP7.QuienQuiereSerMillonario-main\\QuienQuiereSerMillonario.csproj",
+      "projectUniqueName": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
       "projectName": "QuienQuiereSerMillonario",
-      "projectPath": "C:\\Users\\Nacho\\Downloads\\TP7.QuienQuiereSerMillonario-main\\QuienQuiereSerMillonario.csproj",
-      "packagesPath": "C:\\Users\\Nacho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nacho\\Downloads\\TP7.QuienQuiereSerMillonario-main\\obj\\",
+      "projectPath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
+      "packagesPath": "C:\\Users\\47128045\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Nacho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\47128045\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -547,7 +552,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
