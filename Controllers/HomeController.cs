@@ -29,6 +29,7 @@ public class HomeController : Controller
         ViewBag.jug = JuegoQQSM.DevolverJugador();
         ViewBag.listPozo = JuegoQQSM.DevolverPozo();
         ViewBag.listPreg = JuegoQQSM.ListarPreguntas();
+        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas();
         return View();
     }
 

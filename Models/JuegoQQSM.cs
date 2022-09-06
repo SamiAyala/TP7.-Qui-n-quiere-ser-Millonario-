@@ -39,16 +39,17 @@ namespace QuienQuiereSerMillonario.Models
         }
         public static List<Respuesta> ObtenerRespuestas()
         {
+            List<Pregunta> listPreguntas = ListarPreguntas();
             using(SqlConnection db=new SqlConnection(_connectionString))
             {
-                string sql="SELECT * FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta=pIdPregunta";
-                List<Respuesta> listRespuestas = db.Query<Respuesta>(sql).ToList();
-                sql = "SELECT OpcionRespuesta FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta=pIdPregunta WHERE Correcta = 1";
-                _respuestaCorrectaActual = db.QueryFirstOrDefault<char>(sql);
+                string sql="SELECT * FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta = @pIdPregunta";
+                List<Respuesta> listRespuestas = db.Query<Respuesta>(sql, new{@pIdPregunta = listPreguntas[_preguntaActual].idPregunta}).ToList();
+                sql = "SELECT OpcionRespuesta FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta = @pIdPregunta AND Correcta = 1";
+                _respuestaCorrectaActual = db.QueryFirstOrDefault<char>(sql, new{@pIdPregunta = listPreguntas[_preguntaActual].idPregunta});
                 return listRespuestas;
             }
         }
-        
+
         public static bool ChequearRespuesta(char opcion, char opcionComodin){
             if (opcionComodin != null) _player.comodinDobleChance = false;
             if (opcion == _respuestaCorrectaActual || opcionComodin == _respuestaCorrectaActual)
