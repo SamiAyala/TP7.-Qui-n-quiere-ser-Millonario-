@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\46872351\\Desktop\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\46872351\\Desktop\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
         "packagesPath": "C:\\Users\\46872351\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\46872351\\Desktop\\TP7.QuienQuiereSerMillonario\\obj\\",
+=======
+    "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
+        "projectName": "QuienQuiereSerMillonario",
+        "projectPath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\QuienQuiereSerMillonario.csproj",
+        "packagesPath": "C:\\Users\\47128045\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47128045\\TP7.QuienQuiereSerMillonario\\obj\\",
+>>>>>>> bb45793905f4cd3dd6c19448a162b59a57df1253
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\46872351\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\47128045\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> bb45793905f4cd3dd6c19448a162b59a57df1253
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
