@@ -22,6 +22,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Derrota()
+    {
+        return View();
+    }
     
     [HttpPost]
     public IActionResult Juego(string nombre)

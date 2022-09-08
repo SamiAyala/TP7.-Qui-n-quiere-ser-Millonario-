@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zom7hLH0i+CDMLv+HvtVlmyKH4Hbfo6TGRc5bfA5C2Q=",
+  "Hash": "U07JsXDGTU+Rk3P+QWRuT4cDJE3Qs5ojIVcyVn2eyDY=",
   "Source": "QuienQuiereSerMillonario",
   "BasePath": "_content/QuienQuiereSerMillonario",
   "Mode": "Default",
@@ -187,6 +187,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\comodin3.png"
     },
     {
+      "Identity": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\assets\\derrotaBorges.jpg",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/derrotaBorges.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\derrotaBorges.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\assets\\derrotaFondo.jpg",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/derrotaFondo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\derrotaFondo.jpg"
+    },
+    {
       "Identity": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\assets\\fondo.jpg",
       "SourceId": "QuienQuiereSerMillonario",
       "SourceType": "Discovered",
@@ -219,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\fondo2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\assets\\In The End.mp4",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/In The End.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\In The End.mp4"
     },
     {
       "Identity": "C:\\Users\\47128045\\QuienQuiereSerMillonario\\wwwroot\\assets\\logo.webp",
