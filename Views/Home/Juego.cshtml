@@ -13,25 +13,28 @@
 </div>
 <div class="row justify-content-center">
     <div class="col-md-auto cont-preg-resp w-50 rounded-3 p-4">
-        <div class="preg-resp align-middle fs-3" id="pregunta">@ViewBag.listPreg[1].textoPregunta</div>
+        <div class="preg-resp fs-3" id="pregunta">@ViewBag.preg.textoPregunta</div>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
-    <div class="col-4 cont-preg-resp w-25 rounded-3 mx-5 p-2">
-        <div class="preg-resp align-middle fs-5" id="respuesta1">@ViewBag.listResp[1].</div>
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[0].opcionRespuesta')">
+        <div class="preg-resp fs-5" id="respuesta1">@ViewBag.listResp[0].textoRespuesta</div>
     </div>
-    <div class="col-4 cont-preg-resp w-25 rounded-3 mx-5 p-2">
-        <div class="preg-resp align-middle fs-5" id="respuesta2">Respuesta 2</div>
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[1].opcionRespuesta')">
+        <div class="preg-resp fs-5" id="respuesta2">@ViewBag.listResp[1].textoRespuesta</div>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
-    <div class="col-4 cont-preg-resp w-25 rounded-3 mx-5 p-2">
-        <div class="preg-resp align-middle fs-5" id="respuesta3">Respuesta 3</div>
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[2].opcionRespuesta')">
+        <div class="preg-resp fs-5" id="respuesta3">@ViewBag.listResp[2].textoRespuesta</div>
     </div>
-    <div class="col-4 cont-preg-resp w-25 rounded-3 mx-5 p-2">
-        <div class="preg-resp align-middle fs-5" id="respuesta4">Respuesta 4</div>
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[3].opcionRespuesta')">
+        <div class="preg-resp fs-5" id="respuesta4">@ViewBag.listResp[3].textoRespuesta</div>
     </div>
 </div>
+<a class="sigPreg rounded-3 p-2" id="sigPreg" style="display: none; text-decoration: none;"  href='@Url.Action("SiguientePreg", "Home", new{listPreg = @ViewBag.listPreg})' onclick="alert('@ViewBag.listPreg.Count')">
+    <div class="fs-5">Siguiente pregunta ></div>
+</a>
 
 <table class="table position-absolute top-50 start-0 translate-middle-y text-center" style="width:10%; margin-left:2%; background-color: rgb(5, 5, 54); color: #FFFFFF; border: 3px solid #FFB949;">
     <tbody>
@@ -47,5 +50,26 @@
     </tbody>
 </table>
 <script>
-    function 
+    function ChequearRespuesta(opcion) {
+        $.ajax(
+			{
+				type: 'POST',
+				datatype: 'JSON',
+				url: '@Url.Action("ChequearRespuestaAjax","Home")',
+				data: { opcion: opcion },
+				success:
+					function (response)
+					{
+						if(response != null){
+                            if(response) {
+                                alert("WOW");
+                                $("#sigPreg").css("display", "block");
+                            } else {
+                                alert("WOW2!");
+                            }
+                        }
+					}
+			}
+		)
+    }
 </script>

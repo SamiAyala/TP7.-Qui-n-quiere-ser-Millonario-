@@ -37,11 +37,36 @@ body {
 
 .cont-preg-resp{
   background-color: rgb(10, 0, 104);
+  border: 5px solid #be7e16;
+}
+
+.cont-resp{
+  background-color: rgb(10, 0, 104);
   border: 5px solid #FFB949;
+}
+
+.cont-resp:hover{
+  background-color: rgb(25, 0, 255);
 }
 
 .preg-resp{
   color: azure;
+  font-weight: bold;
+  text-align: center;
+}
+
+.preg-resp{
+  color: azure;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sigPreg{
+  color: rgb(0, 0, 0);
+  border: 5px solid #000000;
+  background-color: rgb(0, 207, 10);
+  float: right;
+  margin-right: 1%;
   font-weight: bold;
   text-align: center;
 }
