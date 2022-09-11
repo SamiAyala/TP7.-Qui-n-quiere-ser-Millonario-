@@ -7,13 +7,13 @@ using Dapper;
 namespace QuienQuiereSerMillonario.Models
 {
     public static class JuegoQQSM{
-        private static int _preguntaActual,_posicionPozo,_pozoAcumuladoSeguro,_pozoAcumulado;
+        private static int _preguntaActual;
+        public static int _posicionPozo, _pozoAcumulado, _pozoAcumuladoSeguro;
         private static char _respuestaCorrectaActual;
         private static bool _comodin5050,_comodinDobleChance,_comodinSaltear;
         private static List<Pozo> _listaPozo;
         private static Jugador _player;
-        private static string _connectionString=@"Server=A-PHZ2-CIDI-026;DataBase=JuegoQQSM;Trusted_Connection=True;";
-
+        private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
         public static void iniciarJuego(string pNombre){
             _preguntaActual=0;
             _respuestaCorrectaActual='\0';
@@ -37,15 +37,19 @@ namespace QuienQuiereSerMillonario.Models
                 return listPreguntas;
             }
         }
-        public static List<Respuesta> ObtenerRespuestas()
+
+        public static Pregunta DevolverPregunta(List<Pregunta> listPreguntas) {
+            return listPreguntas[_preguntaActual];
+        }
+
+        public static List<Respuesta> ObtenerRespuestas(int idPregunta)
         {
-            List<Pregunta> listPreguntas = ListarPreguntas();
             using(SqlConnection db=new SqlConnection(_connectionString))
             {
                 string sql="SELECT * FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta = @pIdPregunta";
-                List<Respuesta> listRespuestas = db.Query<Respuesta>(sql, new{@pIdPregunta = listPreguntas[_preguntaActual].idPregunta}).ToList();
+                List<Respuesta> listRespuestas = db.Query<Respuesta>(sql, new{@pIdPregunta = idPregunta}).ToList();
                 sql = "SELECT OpcionRespuesta FROM Respuestas R INNER JOIN Preguntas P ON P.idPregunta = R.fkPregunta WHERE idPregunta = @pIdPregunta AND Correcta = 1";
-                _respuestaCorrectaActual = db.QueryFirstOrDefault<char>(sql, new{@pIdPregunta = listPreguntas[_preguntaActual].idPregunta});
+                _respuestaCorrectaActual = db.QueryFirstOrDefault<char>(sql, new{@pIdPregunta = idPregunta});
                 return listRespuestas;
             }
         }
@@ -56,6 +60,7 @@ namespace QuienQuiereSerMillonario.Models
             {
                 if (_listaPozo[_posicionPozo].valorSeguro) _pozoAcumuladoSeguro = _listaPozo[_posicionPozo].importe;
                 _posicionPozo++;
+                _preguntaActual++;
                 return true;
             }else {
                 return false;
@@ -72,7 +77,7 @@ namespace QuienQuiereSerMillonario.Models
                 _player.comodin5050 = false;
                 int x = 0;
                 List<char> ListChar = new List<char>();
-                List<Respuesta> ListRespuesta = JuegoQQSM.ObtenerRespuestas();
+                List<Respuesta> ListRespuesta = JuegoQQSM.ObtenerRespuestas(_preguntaActual);
                 for(int i = 0; i<ListChar.Count() && x<2; i++){
                     if(ListRespuesta[i].correcta){
                         ListChar.Add(ListRespuesta[i].opcionRespuesta);
@@ -91,6 +96,9 @@ namespace QuienQuiereSerMillonario.Models
         }
         public static Jugador DevolverJugador() {
             return _player;
-        } 
+        }
+        public static int DevolverPregActual() {
+            return _preguntaActual;
+        }
     }
 }

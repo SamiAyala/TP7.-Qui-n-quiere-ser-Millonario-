@@ -39,7 +39,7 @@ public class Respuesta{
         get{return _opcionRespuesta;}
         set{_opcionRespuesta = value;}
     }
-    public string textoRespusta//CAMBIAR NOMBRE; TIENEN QUE SER IGUALES A LA BASE DE DATOS
+    public string textoRespuesta
     {
         get{return _texto;}
         set{_texto = value;}

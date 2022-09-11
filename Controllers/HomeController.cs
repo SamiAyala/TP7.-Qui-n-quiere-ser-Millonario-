@@ -34,8 +34,24 @@ public class HomeController : Controller
         ViewBag.jug = JuegoQQSM.DevolverJugador();
         ViewBag.listPozo = JuegoQQSM.DevolverPozo();
         ViewBag.listPreg = JuegoQQSM.ListarPreguntas();
-        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas();
+        ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
+        ViewBag.preg = JuegoQQSM.DevolverPregunta(ViewBag.listPreg);
+        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(ViewBag.listPreg[ViewBag.pregActual].idPregunta);
         return View();
+    }
+
+    [HttpPost]
+    public JsonResult ChequearRespuestaAjax(char opcion){
+        return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
+    }
+
+    public IActionResult SiguientePreg(List<Pregunta> listPreg){
+        ViewBag.listPreg = listPreg;
+        ViewBag.listPozo = JuegoQQSM.DevolverPozo();
+        ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
+        ViewBag.preg = JuegoQQSM.DevolverPregunta(listPreg);
+        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(listPreg[ViewBag.pregActual].idPregunta);
+        return View("Juego");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
