@@ -32,7 +32,7 @@
         <div class="preg-resp fs-5" id="respuesta4">@ViewBag.listResp[3].textoRespuesta</div>
     </div>
 </div>
-<a class="sigPreg rounded-3 p-2" id="sigPreg" style="display: none; text-decoration: none;"  href='@Url.Action("SiguientePreg", "Home", new{listPreg = @ViewBag.listPreg})' onclick="alert('@ViewBag.listPreg.Count')">
+<a class="sigPreg rounded-3 p-2" id="sigPreg" style="display: none; text-decoration: none;"  href='@Url.Action("SiguientePreg", "Home")'>
     <div class="fs-5">Siguiente pregunta ></div>
 </a>
 
@@ -62,10 +62,9 @@
 					{
 						if(response != null){
                             if(response) {
-                                alert("WOW");
                                 $("#sigPreg").css("display", "block");
                             } else {
-                                alert("WOW2!");
+                                
                             }
                         }
 					}

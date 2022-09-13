@@ -45,12 +45,12 @@ public class HomeController : Controller
         return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
     }
 
-    public IActionResult SiguientePreg(List<Pregunta> listPreg){
-        ViewBag.listPreg = listPreg;
+    public IActionResult SiguientePreg(){
+        ViewBag.listPreg = JuegoQQSM.DevolverListaPreguntas();
         ViewBag.listPozo = JuegoQQSM.DevolverPozo();
         ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
-        ViewBag.preg = JuegoQQSM.DevolverPregunta(listPreg);
-        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(listPreg[ViewBag.pregActual].idPregunta);
+        ViewBag.preg = JuegoQQSM.DevolverPregunta(ViewBag.listPreg);
+        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(ViewBag.listPreg[ViewBag.pregActual].idPregunta);
         return View("Juego");
     }
 
