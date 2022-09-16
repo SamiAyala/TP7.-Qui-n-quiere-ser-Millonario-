@@ -41,6 +41,7 @@
         
         @for (int i = 0; i < ViewBag.listPozo.Count; i++)
         {
+            if(i = ViewBag.posicionPozo){}
             if(ViewBag.listPozo[i].valorSeguro){
 				<th scope="row" style="color:#FFB949;">$@ViewBag.listPozo[i].importe</th>
             } else{
