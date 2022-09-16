@@ -8,13 +8,13 @@ namespace QuienQuiereSerMillonario.Models
 {
     public static class JuegoQQSM{
         private static int _preguntaActual;
-        public static int _posicionPozo, _pozoAcumulado, _pozoAcumuladoSeguro;
+        private static int _posicionPozo, _pozoAcumulado, _pozoAcumuladoSeguro;
         private static char _respuestaCorrectaActual;
         private static bool _comodin5050,_comodinDobleChance,_comodinSaltear;
         private static List<Pozo> _listaPozo;
         private static List<Pregunta> _listaPreguntas;
         private static Jugador _player;
-        private static string _connectionString=@"Server=A-PHZ2-CIDI-048;DataBase=JuegoQQSM;Trusted_Connection=True;";
+        private static string _connectionString=@"Server=A-PHZ2-CIDI-001;DataBase=JuegoQQSM;Trusted_Connection=True;";
         public static void iniciarJuego(string pNombre){
             _preguntaActual=0;
             _respuestaCorrectaActual='\0';

@@ -38,7 +38,18 @@
 
 <table class="table position-absolute top-50 start-0 translate-middle-y text-center" style="width:10%; margin-left:2%; background-color: rgb(5, 5, 54); color: #FFFFFF; border: 3px solid #FFB949;">
     <tbody>
-        @foreach (Pozo p in @ViewBag.listPozo)
+        
+        @for (int i = 0; i < ViewBag.listPozo.Count; i++)
+        {
+            if(ViewBag.listPozo[i].valorSeguro){
+				<th scope="row" style="color:#FFB949;">$@ViewBag.listPozo[i].importe</th>
+            } else{
+                <th scope="row">$@ViewBag.listPozo[i].importe</th>
+            }
+            <tr></tr>
+        }
+        
+        <!--@foreach (Pozo p in @ViewBag.listPozo)
         {
             if(p.valorSeguro){
 				<th scope="row" style="color:#FFB949;">$@p.importe</th>
@@ -46,7 +57,7 @@
                 <th scope="row">$@p.importe</th>
             }
             <tr></tr>
-        }
+        }-->
     </tbody>
 </table>
 <script>
