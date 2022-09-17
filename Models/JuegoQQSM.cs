@@ -14,7 +14,7 @@ namespace QuienQuiereSerMillonario.Models
         private static List<Pozo> _listaPozo;
         private static List<Pregunta> _listaPreguntas;
         private static Jugador _player;
-        private static string _connectionString=@"Server=A-PHZ2-CIDI-001;DataBase=JuegoQQSM;Trusted_Connection=True;";
+        private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
         public static void iniciarJuego(string pNombre){
             _preguntaActual=0;
             _respuestaCorrectaActual='\0';
@@ -22,8 +22,7 @@ namespace QuienQuiereSerMillonario.Models
             _pozoAcumuladoSeguro=0;
             _pozoAcumulado=0;
             _comodin5050=true; _comodinDobleChance=true;_comodinSaltear=true;
-            _listaPozo=new List<Pozo>(){new Pozo(250, false), new Pozo(500, false), new Pozo(1000, false),new Pozo(2500, true),new Pozo(5000, false),new Pozo(7500, false),new Pozo(10000, false),new Pozo(20000, true),new Pozo(30000, false),new Pozo(50000, false),new Pozo(70000, false),new Pozo(100000, true),new Pozo(130000, false),new Pozo(180000, false),new Pozo(300000, false),new Pozo(50000, true),new Pozo(750000, false),new Pozo(1000000, false),new Pozo(1500000, false),new Pozo(2000000, true)};
-            _listaPozo.Reverse();
+            _listaPozo=new List<Pozo>(){new Pozo(250, false), new Pozo(500, false), new Pozo(1000, false),new Pozo(2500, true),new Pozo(5000, false),new Pozo(10000, false),new Pozo(20000, false),new Pozo(50000, true),new Pozo(70000, false),new Pozo(100000, false),new Pozo(150000, false),new Pozo(300000, true),new Pozo(500000, false),new Pozo(1000000, false),new Pozo(1500000, false),new Pozo(2000000, true)};
             DateTime pFechaHora=DateTime.Now;
             string sql="INSERT INTO dbo.Jugadores(Nombre,FechaHora,PozoGanado, ComodinDobleChance, Comodin50, ComodinSaltear) VALUES (@Nombre,@FechaHora, 0, 1, 1, 1)";
             using(SqlConnection db=new SqlConnection(_connectionString)){

@@ -33,6 +33,7 @@ public class HomeController : Controller
         JuegoQQSM.iniciarJuego(nombre);
         ViewBag.jug = JuegoQQSM.DevolverJugador();
         ViewBag.listPozo = JuegoQQSM.DevolverPozo();
+        ViewBag.posicionPozo = JuegoQQSM.DevolverPosPozo();
         ViewBag.listPreg = JuegoQQSM.ListarPreguntas();
         ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
         ViewBag.preg = JuegoQQSM.DevolverPregunta(ViewBag.listPreg);
@@ -48,6 +49,7 @@ public class HomeController : Controller
     public IActionResult SiguientePreg(){
         ViewBag.listPreg = JuegoQQSM.DevolverListaPreguntas();
         ViewBag.listPozo = JuegoQQSM.DevolverPozo();
+        ViewBag.posicionPozo = JuegoQQSM.DevolverPosPozo();
         ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
         ViewBag.preg = JuegoQQSM.DevolverPregunta(ViewBag.listPreg);
         ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(ViewBag.listPreg[ViewBag.pregActual].idPregunta);
