@@ -26,6 +26,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Victoria()
+    {
+        return View();
+    }
     
     [HttpPost]
     public IActionResult Juego(string nombre)
@@ -47,13 +51,22 @@ public class HomeController : Controller
     }
 
     public IActionResult SiguientePreg(){
-        ViewBag.listPreg = JuegoQQSM.DevolverListaPreguntas();
-        ViewBag.listPozo = JuegoQQSM.DevolverPozo();
-        ViewBag.posicionPozo = JuegoQQSM.DevolverPosPozo();
-        ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
-        ViewBag.preg = JuegoQQSM.DevolverPregunta(ViewBag.listPreg);
-        ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(ViewBag.listPreg[ViewBag.pregActual].idPregunta);
-        return View("Juego");
+        Jugador jug = JuegoQQSM.DevolverJugador();
+        List<Pozo> listPozo = JuegoQQSM.DevolverPozo();
+        int posicionPozo = JuegoQQSM.DevolverPosPozo();
+        ViewBag.jug = jug;
+        ViewBag.listPozo = listPozo;
+        if(posicionPozo >= listPozo.Count){
+            ViewBag.posicionPozo = posicionPozo-1;
+            return View("Victoria");
+        } else {
+            ViewBag.posicionPozo = posicionPozo;
+            ViewBag.listPreg = JuegoQQSM.DevolverListaPreguntas();
+            ViewBag.pregActual = JuegoQQSM.DevolverPregActual();
+            ViewBag.preg = JuegoQQSM.DevolverPregunta(ViewBag.listPreg);
+            ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(ViewBag.listPreg[ViewBag.pregActual].idPregunta);
+            return View("Juego");
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

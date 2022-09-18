@@ -36,7 +36,7 @@
     <div class="fs-5">Siguiente pregunta ></div>
 </a>
 
-<table class="table position-absolute top-50 start-0 translate-middle-y text-center" style="width:10%; margin-left:2%; background-color: rgb(5, 5, 54); color: #FFFFFF; border: 3px solid #FFB949;">
+<table class="table position-absolute top-50 start-0 translate-middle-y text-center listaPozo" style="width:10%; margin-left:2%; background-color: rgb(5, 5, 54); color: #FFFFFF; border: 3px solid #FFB949;">
     <tbody>
         
         @for (int i = 0; i < ViewBag.listPozo.Count; i++)
@@ -52,16 +52,6 @@
             }
             <tr></tr>
         }
-        
-        <!--@foreach (Pozo p in @ViewBag.listPozo)
-        {
-            if(p.valorSeguro){
-				<th scope="row" style="color:#FFB949;">$@p.importe</th>
-            } else{
-                <th scope="row">$@p.importe</th>
-            }
-            <tr></tr>
-        }-->
     </tbody>
 </table>
 <script>
@@ -77,6 +67,7 @@
 					{
 						if(response != null){
                             if(response) {
+
                                 $("#sigPreg").css("display", "block");
                             } else {
                                 

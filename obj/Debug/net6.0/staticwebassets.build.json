@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cwQwkLvDrh2CVe/0UgYQ9fV/CEZwFMqvNweiAleI75M=",
+  "Hash": "KW47hpV2gvAA2aWGjRiPKHedYRdoPTcazDU+VpmTKRc=",
   "Source": "QuienQuiereSerMillonario",
   "BasePath": "_content/QuienQuiereSerMillonario",
   "Mode": "Default",
@@ -255,6 +255,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\fondo2.jpg"
     },
     {
+      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\Free Bird.mp4",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/Free Bird.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\Free Bird.mp4"
+    },
+    {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\In The End.mp4",
       "SourceId": "QuienQuiereSerMillonario",
       "SourceType": "Discovered",
@@ -289,12 +306,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\logo.webp"
     },
     {
-      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\placeholder.jpg",
+      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\victoriaFondo.gif",
       "SourceId": "QuienQuiereSerMillonario",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
       "BasePath": "_content/QuienQuiereSerMillonario",
-      "RelativePath": "assets/placeholder.jpg",
+      "RelativePath": "assets/victoriaFondo.gif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,7 +320,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\placeholder.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\victoriaFondo.gif"
     },
     {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\css\\site.css",

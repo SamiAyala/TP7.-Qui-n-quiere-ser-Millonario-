@@ -12,8 +12,8 @@ html {
   position: relative;
   min-height: 100%;
 }
-.text-center{
-  background: url(/assets/fondo2.jpg)no-repeat;
+.listaPozo{
+  background: url(/assets/fondo2.jpg) no-repeat;
   background-size: auto;
 }
 
@@ -79,5 +79,10 @@ body {
 .bodyDerrota
 {
   background: url(/assets/derrotaFondo.jpg) no-repeat;
+  background-size: cover;
+}
+.bodyVictoria
+{
+  background: url(/assets/victoriaFondo.gif) no-repeat;
   background-size: cover;
 }
