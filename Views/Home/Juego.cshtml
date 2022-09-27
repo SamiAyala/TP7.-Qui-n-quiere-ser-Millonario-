@@ -67,10 +67,9 @@
 					{
 						if(response != null){
                             if(response) {
-
                                 $("#sigPreg").css("display", "block");
                             } else {
-                                
+                                $(location).attr('href','@Url.Action("Derrota", "Home")');
                             }
                         }
 					}

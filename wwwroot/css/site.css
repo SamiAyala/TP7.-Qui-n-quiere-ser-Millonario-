@@ -78,11 +78,17 @@ body {
 }
 .bodyDerrota
 {
-  background: url(/assets/derrotaFondo.jpg) no-repeat;
+  background: url(/assets/derrotaFondo.webp) no-repeat;
   background-size: cover;
 }
 .bodyVictoria
 {
   background: url(/assets/victoriaFondo.gif) no-repeat;
   background-size: cover;
+}
+.derrotaDiv
+{
+  background-color: rgba(128, 128, 128, 0.7);
+  width: 75%;
+  margin-top: 20%;
 }
