@@ -76,6 +76,9 @@ namespace QuienQuiereSerMillonario.Models
         public static int DevolverPosPozo(){
            return _posicionPozo; 
         }
+        public static int DevolverPozoAsegurado(){
+           return _pozoAcumuladoSeguro; 
+        }
         public static List<char> Comodin5050(){
             if(_player.comodin5050){
                 _player.comodin5050 = false;

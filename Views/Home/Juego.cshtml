@@ -13,18 +13,17 @@
 </div>
 
 <div class="modal fade" id="pozoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Llegaste a un pozo seguro!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            Si queres podes retirarte y ganar @ViewBag.listPozo[ViewBag.posicionPozo].importe o podes arriesgarte y seguir...
+            Si queres podes retirarte y ganar <b>$@ViewBag.listPozo[ViewBag.posicionPozo].importe</b> o podes arriesgarte y seguir por mas!
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir</button>
-            <button type="button" class="btn btn-primary">Retirarse</button>
+            <a type="button" class="btn btn-primary" href='@Url.Action("Victoria", "Home")'>Retirarse</a>
         </div>
         </div>
     </div>
@@ -87,7 +86,7 @@
 						if(response != null){
                             var valorSeguro = '@ViewBag.listPozo[ViewBag.posicionPozo].valorSeguro';
                             if(response) {
-                                if(valorSeguro == 'true') {
+                                if(valorSeguro == 'True') {
                                     $('#pozoModal').modal('show');
                                 }
                                 $("#sigPreg").css("display", "block");

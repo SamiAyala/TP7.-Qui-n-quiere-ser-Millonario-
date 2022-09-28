@@ -28,6 +28,8 @@ public class HomeController : Controller
     }
     public IActionResult Victoria()
     {
+        ViewBag.jug = JuegoQQSM.DevolverJugador();
+        ViewBag.pozoAcumuladoSeguro = JuegoQQSM.DevolverPozoAsegurado();
         return View();
     }
     

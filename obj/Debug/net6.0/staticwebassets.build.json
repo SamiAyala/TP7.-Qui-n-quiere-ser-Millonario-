@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yPYH79TDfD8rK0R2JsKmPP+KNdrtqSDHOefzxMjdmvw=",
+  "Hash": "k3TceFGR6RQ0eBFKcmEdKUrW8APHxedmp10Taav9fQk=",
   "Source": "QuienQuiereSerMillonario",
   "BasePath": "_content/QuienQuiereSerMillonario",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\carousel2.jpg"
     },
     {
+      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\carousel2.png",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/carousel2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\carousel2.png"
+    },
+    {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\carousel3.jpg",
       "SourceId": "QuienQuiereSerMillonario",
       "SourceType": "Discovered",
@@ -170,23 +187,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\comodin3.png"
     },
     {
-      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\derrotaFondo.jpg",
-      "SourceId": "QuienQuiereSerMillonario",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
-      "BasePath": "_content/QuienQuiereSerMillonario",
-      "RelativePath": "assets/derrotaFondo.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\derrotaFondo.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\derrotaFondo.webp",
       "SourceId": "QuienQuiereSerMillonario",
       "SourceType": "Discovered",
@@ -236,40 +236,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\fondo2.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\Free Bird.mp4",
-      "SourceId": "QuienQuiereSerMillonario",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
-      "BasePath": "_content/QuienQuiereSerMillonario",
-      "RelativePath": "assets/Free Bird.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Free Bird.mp4"
-    },
-    {
-      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\In The End.mp4",
-      "SourceId": "QuienQuiereSerMillonario",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
-      "BasePath": "_content/QuienQuiereSerMillonario",
-      "RelativePath": "assets/In The End.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\In The End.mp4"
     },
     {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\logo.webp",
