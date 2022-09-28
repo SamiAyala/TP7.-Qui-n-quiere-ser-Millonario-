@@ -107,5 +107,8 @@ namespace QuienQuiereSerMillonario.Models
         public static int DevolverPregActual() {
             return _preguntaActual;
         }
+        public static void GuardarJugador(Jugador jug, int pozoAcumuladoSeguro) {
+            
+        }
     }
 }
