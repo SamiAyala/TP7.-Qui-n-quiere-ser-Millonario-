@@ -108,7 +108,11 @@ namespace QuienQuiereSerMillonario.Models
             return _preguntaActual;
         }
         public static void GuardarJugador(Jugador jug, int pozoAcumuladoSeguro) {
-            
+            using(SqlConnection db=new SqlConnection(_connectionString))
+            {
+                string sql="UPDATE Jugadores SET PozoGanado = @pPozoGanado WHERE Nombre = @pNombre AND FechaHora = @pFechaHora";
+                db.Query<Respuesta>(sql, new{@pNombre = jug.nombre, @pFechaHora = jug.fechaHora});
+            }
         }
     }
 }
