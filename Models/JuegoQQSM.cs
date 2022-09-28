@@ -111,7 +111,7 @@ namespace QuienQuiereSerMillonario.Models
             using(SqlConnection db=new SqlConnection(_connectionString))
             {
                 string sql="UPDATE Jugadores SET PozoGanado = @pPozoGanado WHERE Nombre = @pNombre AND FechaHora = @pFechaHora";
-                db.Query<Respuesta>(sql, new{@pNombre = jug.nombre, @pFechaHora = jug.fechaHora});
+                db.Query<Respuesta>(sql, new{@pPozoGanado = pozoAcumuladoSeguro, @pNombre = jug.nombre, @pFechaHora = jug.fechaHora});
             }
         }
     }
