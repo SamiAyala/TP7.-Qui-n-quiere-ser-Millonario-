@@ -11,6 +11,25 @@
         <img class="img-fluid" src="/assets/logo.webp"/>
     </div>
 </div>
+
+<div class="modal fade" id="pozoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Llegaste a un pozo seguro!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Si queres podes retirarte y ganar @ViewBag.listPozo[ViewBag.posicionPozo].importe o podes arriesgarte y seguir...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir</button>
+            <button type="button" class="btn btn-primary">Retirarse</button>
+        </div>
+        </div>
+    </div>
+</div>
+
 <div class="row justify-content-center">
     <div class="col-md-auto cont-preg-resp w-50 rounded-3 p-4">
         <div class="preg-resp fs-3" id="pregunta">@ViewBag.preg.textoPregunta</div>
@@ -66,7 +85,11 @@
 					function (response)
 					{
 						if(response != null){
+                            var valorSeguro = '@ViewBag.listPozo[ViewBag.posicionPozo].valorSeguro';
                             if(response) {
+                                if(valorSeguro == 'true') {
+                                    $('#pozoModal').modal('show');
+                                }
                                 $("#sigPreg").css("display", "block");
                             } else {
                                 $(location).attr('href','@Url.Action("Derrota", "Home")');
