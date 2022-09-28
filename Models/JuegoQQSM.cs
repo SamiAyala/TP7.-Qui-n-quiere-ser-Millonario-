@@ -13,7 +13,7 @@ namespace QuienQuiereSerMillonario.Models
         private static bool _comodin5050,_comodinDobleChance,_comodinSaltear;
         private static List<Pozo> _listaPozo;
         private static List<Pregunta> _listaPreguntas;
-        private static Jugador _player;
+        public static Jugador _player;
         private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
         public static void iniciarJuego(string pNombre){
             _preguntaActual=0;
@@ -63,12 +63,15 @@ namespace QuienQuiereSerMillonario.Models
             if (opcion == _respuestaCorrectaActual || opcionComodin == _respuestaCorrectaActual)
             {
                 if (_listaPozo[_posicionPozo].valorSeguro) _pozoAcumuladoSeguro = _listaPozo[_posicionPozo].importe;
-                _posicionPozo++;
-                _preguntaActual++;
                 return true;
             }else {
                 return false;
             }
+        }
+
+        public static void IncrementarPregYPozo(){
+            _posicionPozo++;
+            _preguntaActual++;
         }
         public static List<Pozo> DevolverPozo(){
             return _listaPozo;

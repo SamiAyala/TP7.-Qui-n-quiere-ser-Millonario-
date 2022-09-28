@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZsYgwic/q0M2RZRalwPx9kxFcVqhXnj6jtP1FE2EDG4=",
+  "Hash": "ksVguUyydtEo2DTLWT3/8bpbKLOrPRRLDxcNSLyg+VI=",
   "Source": "QuienQuiereSerMillonario",
   "BasePath": "_content/QuienQuiereSerMillonario",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\comodin1.png"
+    },
+    {
+      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\comodin1Usado.png",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/comodin1Usado.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\comodin1Usado.png"
     },
     {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\comodin2.png",

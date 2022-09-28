@@ -50,12 +50,8 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost]
-    public JsonResult ChequearRespuestaAjax(char opcion){
-        return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
-    }
-
     public IActionResult SiguientePreg(){
+        JuegoQQSM.IncrementarPregYPozo();
         Jugador jug = JuegoQQSM.DevolverJugador();
         List<Pozo> listPozo = JuegoQQSM.DevolverPozo();
         int posicionPozo = JuegoQQSM.DevolverPosPozo();
@@ -72,6 +68,16 @@ public class HomeController : Controller
             ViewBag.listResp = JuegoQQSM.ObtenerRespuestas(ViewBag.listPreg[ViewBag.pregActual].idPregunta);
             return View("Juego");
         }
+    }
+
+    public IActionResult ComodinSaltear(){
+        JuegoQQSM._player.comodinSaltear = false;
+        return RedirectToAction("SiguientePreg","Home");
+    }
+
+    [HttpPost]
+    public JsonResult ChequearRespuestaAjax(char opcion){
+        return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,7 +1,11 @@
 <nav class="navbar">
     <a></a>
     <div class="cont-comodines">
-        <img src="/assets/comodin1.png" class="imgComodin">
+        @if(ViewBag.jug.comodinSaltear){
+            <a href='@Url.Action("ComodinSaltear","Home")'><img src="/assets/comodin1.png" class="imgComodin"></a>
+        } else {
+            <img src="/assets/comodin1Usado.png" class="imgComodin">
+        }
         <img src="/assets/comodin2.png" class="imgComodin">
         <img src="/assets/comodin3.png" class="imgComodin">
     </div>
@@ -36,18 +40,18 @@
 </div>
 <div class="row justify-content-center mt-5">
     <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[0].opcionRespuesta')">
-        <div class="preg-resp fs-5" id="respuesta1">@ViewBag.listResp[0].textoRespuesta</div>
+        <div class="preg-resp fs-5" id="a">@ViewBag.listResp[0].opcionRespuesta - @ViewBag.listResp[0].textoRespuesta</div>
     </div>
     <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[1].opcionRespuesta')">
-        <div class="preg-resp fs-5" id="respuesta2">@ViewBag.listResp[1].textoRespuesta</div>
+        <div class="preg-resp fs-5" id="b">@ViewBag.listResp[1].opcionRespuesta - @ViewBag.listResp[1].textoRespuesta</div>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
     <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[2].opcionRespuesta')">
-        <div class="preg-resp fs-5" id="respuesta3">@ViewBag.listResp[2].textoRespuesta</div>
+        <div class="preg-resp fs-5" id="c">@ViewBag.listResp[2].opcionRespuesta - @ViewBag.listResp[2].textoRespuesta</div>
     </div>
     <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" onclick="ChequearRespuesta('@ViewBag.listResp[3].opcionRespuesta')">
-        <div class="preg-resp fs-5" id="respuesta4">@ViewBag.listResp[3].textoRespuesta</div>
+        <div class="preg-resp fs-5" id="d">@ViewBag.listResp[3].opcionRespuesta - @ViewBag.listResp[3].textoRespuesta</div>
     </div>
 </div>
 <a class="sigPreg rounded-3 p-2" id="sigPreg" style="display: none; text-decoration: none;"  href='@Url.Action("SiguientePreg", "Home")'>
