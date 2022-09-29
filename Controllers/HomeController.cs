@@ -31,14 +31,25 @@ public class HomeController : Controller
         JuegoQQSM.GuardarJugador(jug, pozoAcumuladoSeguro);
         return View();
     }
+
     public IActionResult Victoria()
     {
         Jugador jug = JuegoQQSM.DevolverJugador();
-        int pozoAcumuladoSeguro = JuegoQQSM.DevolverPozoAsegurado();
+        int pozoGanado = JuegoQQSM.DevolverPozoAsegurado();
         ViewBag.jug = jug;
-        ViewBag.pozoAcumuladoSeguro = pozoAcumuladoSeguro;
-        JuegoQQSM.GuardarJugador(jug, pozoAcumuladoSeguro);
+        ViewBag.pozoGanado = pozoGanado;
+        JuegoQQSM.GuardarJugador(jug, pozoGanado);
         return View();
+    }
+
+    public IActionResult Retirarse()
+    {
+        Jugador jug = JuegoQQSM.DevolverJugador();
+        int pozoGanado = JuegoQQSM.DevolverPozo()[JuegoQQSM.DevolverPosPozo()].importe;
+        ViewBag.jug = jug;
+        ViewBag.pozoGanado = pozoGanado;
+        JuegoQQSM.GuardarJugador(jug, pozoGanado);
+        return View("Victoria");
     }
     
     [HttpPost]
@@ -63,8 +74,7 @@ public class HomeController : Controller
         ViewBag.jug = jug;
         ViewBag.listPozo = listPozo;
         if(posicionPozo >= listPozo.Count){
-            ViewBag.posicionPozo = posicionPozo-1;
-            return View("Victoria");
+            return RedirectToAction("Victoria");
         } else {
             ViewBag.posicionPozo = posicionPozo;
             ViewBag.listPreg = JuegoQQSM.DevolverListaPreguntas();
