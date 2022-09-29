@@ -66,6 +66,7 @@ namespace QuienQuiereSerMillonario.Models
             if (opcionComodin != null) _player.comodinDobleChance = false;
             if (opcion == _respuestaCorrectaActual || opcionComodin == _respuestaCorrectaActual)
             {
+                ChequearPozoSeguro();
                 return true;
             }else {
                 return false;

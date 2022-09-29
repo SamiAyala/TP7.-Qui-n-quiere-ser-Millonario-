@@ -67,6 +67,7 @@ public class HomeController : Controller
     }
 
     public IActionResult SiguientePreg(){
+        JuegoQQSM.ChequearPozoSeguro();
         JuegoQQSM.IncrementarPregYPozo();
         Jugador jug = JuegoQQSM.DevolverJugador();
         List<Pozo> listPozo = JuegoQQSM.DevolverPozo();
@@ -87,13 +88,11 @@ public class HomeController : Controller
 
     public IActionResult ComodinSaltear(){
         JuegoQQSM._player.comodinSaltear = false;
-        JuegoQQSM.ChequearPozoSeguro();
         return RedirectToAction("SiguientePreg","Home");
     }
 
     [HttpPost]
     public JsonResult ChequearRespuestaAjax(char opcion){
-        JuegoQQSM.ChequearPozoSeguro();
         return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
     }
 

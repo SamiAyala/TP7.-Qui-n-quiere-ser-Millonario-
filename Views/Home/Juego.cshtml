@@ -58,10 +58,10 @@
     Correcta!
 </div>
 
-<a class="btn btn-warning sigPreg rounded-3 p-2" type="button" style="text-decoration: none;"  href='@Url.Action("Retirarse", "Home")'>
+<a class="btn btn-warning sigPreg rounded-3 p-2" type="button" style="display: none; text-decoration: none;"  href='@Url.Action("Retirarse", "Home")'>
     <div class="fs-5">Retirarse</div>
 </a>
-<a class="btn btn-success sigPreg rounded-3 p-2" type="button" id="sigPreg" style="display: none; text-decoration: none;"  href='@Url.Action("SiguientePreg", "Home")'>
+<a class="btn btn-success sigPreg rounded-3 p-2" type="button" style="display: none; text-decoration: none;"  href='@Url.Action("SiguientePreg", "Home")'>
     <div class="fs-5">Siguiente pregunta ></div>
 </a>
 
@@ -96,7 +96,7 @@
 					{
 						if(response != null){
                             if(response) {
-                                $("#sigPreg").css("display", "block");
+                                $(".sigPreg").css("display", "block");
                                 $("#msgCorrecto").css("display", "block");
                                 //$("#pozoModal").modal("show");
                                 $(".cont-resp").css("display", "none");
