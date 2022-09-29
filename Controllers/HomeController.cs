@@ -24,6 +24,11 @@ public class HomeController : Controller
     }
     public IActionResult Derrota()
     {
+        Jugador jug = JuegoQQSM.DevolverJugador();
+        int pozoAcumuladoSeguro = JuegoQQSM.DevolverPozoAsegurado();
+        ViewBag.jug = jug;
+        ViewBag.pozoAcumuladoSeguro = pozoAcumuladoSeguro;
+        JuegoQQSM.GuardarJugador(jug, pozoAcumuladoSeguro);
         return View();
     }
     public IActionResult Victoria()
@@ -72,11 +77,13 @@ public class HomeController : Controller
 
     public IActionResult ComodinSaltear(){
         JuegoQQSM._player.comodinSaltear = false;
+        JuegoQQSM.ChequearPozoSeguro();
         return RedirectToAction("SiguientePreg","Home");
     }
 
     [HttpPost]
     public JsonResult ChequearRespuestaAjax(char opcion){
+        JuegoQQSM.ChequearPozoSeguro();
         return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
     }
 
