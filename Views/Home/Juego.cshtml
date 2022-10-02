@@ -11,7 +11,11 @@
         } else {
             <img src="/assets/comodin2Usado.png" class="imgComodin"/>
         }
-        <img src="/assets/comodin3.png" class="imgComodin"/>
+        @if(ViewBag.jug.comodinDobleChance){
+            <img src="/assets/comodin3.png" id="DobleChance" id="DobleChance" class="imgComodin"/>
+        } else {
+            <img src="/assets/comodin3Usado.png" class="imgComodin"/>
+        }
     </div>
 </nav>
 <div class="row justify-content-center">
@@ -81,13 +85,19 @@
 				success:
 					function (response)
 					{
+                        var DobleChance = '@ViewBag.jug.comodinDobleChance';
 						if(response != null){
                             if(response) {
                                 $(".sigPreg").css("display", "block");
                                 $("#msgCorrecto").css("display", "block");
                                 $(".cont-resp").css("display", "none");
                             } else {
-                                $(location).attr('href','@Url.Action("Derrota", "Home")');
+                                if (DobleChance == 'True') {
+                                    alert("COCK");
+                                    ComodinDobleChance(opcion);
+                                } else {
+                                    $(location).attr('href','@Url.Action("Derrota", "Home")');
+                                }
                             }
                         }
 					}
@@ -108,6 +118,23 @@
                         response.forEach(C => {
                             $('#' + C).css("display", "none");
                         })
+					}
+			}
+		)
+    }
+
+    function ComodinDobleChance(opcion) {
+        $.ajax(
+			{
+				type: 'POST',
+				datatype: 'JSON',
+				url: '@Url.Action("ComodinDobleChance","Home")',
+				success:
+					function (response)
+					{
+                        alert("ok");
+                        $('#DobleChance').attr("src", "/assets/comodin3Usado.png");
+                        $('#' + opcion).css("background-color", "gray");
 					}
 			}
 		)

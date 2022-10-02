@@ -63,7 +63,6 @@ namespace QuienQuiereSerMillonario.Models
         }
 
         public static bool ChequearRespuesta(char opcion, char opcionComodin){
-            if (opcionComodin != null) _player.comodinDobleChance = false;
             if (opcion == _respuestaCorrectaActual || opcionComodin == _respuestaCorrectaActual)
             {
                 ChequearPozoSeguro();
@@ -113,6 +112,15 @@ namespace QuienQuiereSerMillonario.Models
                 db.Query<Jugador>(sql, new{@pComodinSaltear = _player.comodinSaltear, @pNombre = _player.nombre, @pFechaHora = _player.fechaHora});
             }
         }
+
+        public static void ComodinDobleChance(){
+            _player.comodinDobleChance = false;
+            using(SqlConnection db=new SqlConnection(_connectionString)){
+                string sql="UPDATE Jugadores SET ComodinDobleChance = @pComodinDobleChance WHERE Nombre = @pNombre AND FechaHora = @pFechaHora";
+                db.Query<Jugador>(sql, new{@pComodinDobleChance = _player.comodinDobleChance, @pNombre = _player.nombre, @pFechaHora = _player.fechaHora});
+            }
+        }
+
         public static Jugador DevolverJugador() {
             return _player;
         }

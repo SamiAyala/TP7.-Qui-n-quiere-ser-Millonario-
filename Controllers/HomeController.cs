@@ -96,6 +96,13 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    public int ComodinDobleChance(){
+        int i = 0;
+        JuegoQQSM.ComodinDobleChance();
+        return i;
+    }
+
+    [HttpPost]
     public JsonResult ChequearRespuestaAjax(char opcion){
         return Json(JuegoQQSM.ChequearRespuesta(opcion, opcion));
     }
