@@ -91,12 +91,16 @@ namespace QuienQuiereSerMillonario.Models
                 _player.comodin5050 = false;
                 int x = 0;
                 List<char> ListChar = new List<char>();
-                List<Respuesta> ListRespuesta = JuegoQQSM.ObtenerRespuestas(_preguntaActual);
-                for(int i = 0; i<ListChar.Count() && x<2; i++){
-                    if(ListRespuesta[i].correcta){
+                List<Respuesta> ListRespuesta = ObtenerRespuestas(_listaPreguntas[_preguntaActual].idPregunta);
+                for(int i = 0; x<2; i++){
+                    if(!ListRespuesta[i].correcta){
                         ListChar.Add(ListRespuesta[i].opcionRespuesta);
                         x++;
                     }
+                }
+                using(SqlConnection db=new SqlConnection(_connectionString)){
+                    string sql="UPDATE Jugadores SET Comodin50 = @pComodin50 WHERE Nombre = @pNombre AND FechaHora = @pFechaHora";
+                    db.Query<Jugador>(sql, new{@pComodin50 = _player.comodin5050, @pNombre = _player.nombre, @pFechaHora = _player.fechaHora});
                 }
                 return ListChar;
             }

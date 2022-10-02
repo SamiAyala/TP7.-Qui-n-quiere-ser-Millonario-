@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ksVguUyydtEo2DTLWT3/8bpbKLOrPRRLDxcNSLyg+VI=",
+  "Hash": "LcLPpWI+Y6598ykbDoP+z6wqX8bEbe9Nt4oUlxkqCY0=",
   "Source": "QuienQuiereSerMillonario",
   "BasePath": "_content/QuienQuiereSerMillonario",
   "Mode": "Default",
@@ -170,6 +170,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\comodin2.png"
     },
     {
+      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\comodin2Usado.png",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/comodin2Usado.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\comodin2Usado.png"
+    },
+    {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\comodin3.png",
       "SourceId": "QuienQuiereSerMillonario",
       "SourceType": "Discovered",
@@ -185,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\comodin3.png"
+    },
+    {
+      "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\comodin3Usado.png",
+      "SourceId": "QuienQuiereSerMillonario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\",
+      "BasePath": "_content/QuienQuiereSerMillonario",
+      "RelativePath": "assets/comodin3Usado.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\comodin3Usado.png"
     },
     {
       "Identity": "C:\\Users\\Nacho\\Desktop\\TP7.QuienQuiereSerMillonario\\wwwroot\\assets\\derrotaFondo.webp",

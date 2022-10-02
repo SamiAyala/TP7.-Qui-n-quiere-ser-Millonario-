@@ -86,9 +86,13 @@ public class HomeController : Controller
     }
 
     public IActionResult ComodinSaltear(){
-        //JuegoQQSM._player.comodinSaltear = false;
         JuegoQQSM.ComodinSaltear();
         return RedirectToAction("SiguientePreg","Home");
+    }
+
+    [HttpPost]
+    public List<char> Comodin5050(){
+        return JuegoQQSM.Comodin5050();
     }
 
     [HttpPost]

@@ -2,34 +2,21 @@
     <a></a>
     <div class="cont-comodines">
         @if(ViewBag.jug.comodinSaltear){
-            <a href='@Url.Action("ComodinSaltear","Home")'><img src="/assets/comodin1.png" class="imgComodin"></a>
+            <a href='@Url.Action("ComodinSaltear","Home")'><img src="/assets/comodin1.png" class="imgComodin"/></a>
         } else {
             <img src="/assets/comodin1Usado.png" class="imgComodin">
         }
-        <img src="/assets/comodin2.png" class="imgComodin">
-        <img src="/assets/comodin3.png" class="imgComodin">
+        @if(ViewBag.jug.comodin5050){
+            <img src="/assets/comodin2.png" id="5050" class="imgComodin" onclick="Comodin5050()"/>
+        } else {
+            <img src="/assets/comodin2Usado.png" class="imgComodin"/>
+        }
+        <img src="/assets/comodin3.png" class="imgComodin"/>
     </div>
 </nav>
 <div class="row justify-content-center">
     <div class="col-3 mb-5">
         <img class="img-fluid" src="/assets/logo.webp"/>
-    </div>
-</div>
-
-<div class="modal fade" id="pozoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Llegaste a un pozo seguro!</h5>
-        </div>
-        <div class="modal-body">
-            Si queres podes retirarte y ganar <b>$@ViewBag.listPozo[ViewBag.posicionPozo].importe</b> o podes arriesgarte y seguir por mas!
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir</button>
-            <a type="button" class="btn btn-primary" href='@Url.Action("Victoria", "Home")'>Retirarse</a>
-        </div>
-        </div>
     </div>
 </div>
 
@@ -39,18 +26,18 @@
     </div>
 </div>
 <div class="row justify-content-center mt-5">
-    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[0].opcionRespuesta')">
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" id="A" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[0].opcionRespuesta')">
         <div class="preg-resp fs-5" id="a">@ViewBag.listResp[0].opcionRespuesta - @ViewBag.listResp[0].textoRespuesta</div>
     </div>
-    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[1].opcionRespuesta')">
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" id="B" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[1].opcionRespuesta')">
         <div class="preg-resp fs-5" id="b">@ViewBag.listResp[1].opcionRespuesta - @ViewBag.listResp[1].textoRespuesta</div>
     </div>
 </div>
 <div class="row justify-content-center mt-5">
-    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[2].opcionRespuesta')">
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" id="C" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[2].opcionRespuesta')">
         <div class="preg-resp fs-5" id="c">@ViewBag.listResp[2].opcionRespuesta - @ViewBag.listResp[2].textoRespuesta</div>
     </div>
-    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[3].opcionRespuesta')">
+    <div class="col-4 cont-preg-resp cont-resp w-25 rounded-3 mx-5 p-2" id="D" style="display: block;" onclick="ChequearRespuesta('@ViewBag.listResp[3].opcionRespuesta')">
         <div class="preg-resp fs-5" id="d">@ViewBag.listResp[3].opcionRespuesta - @ViewBag.listResp[3].textoRespuesta</div>
     </div>
 </div>
@@ -98,12 +85,29 @@
                             if(response) {
                                 $(".sigPreg").css("display", "block");
                                 $("#msgCorrecto").css("display", "block");
-                                //$("#pozoModal").modal("show");
                                 $(".cont-resp").css("display", "none");
                             } else {
                                 $(location).attr('href','@Url.Action("Derrota", "Home")');
                             }
                         }
+					}
+			}
+		)
+    }
+
+    function Comodin5050() {
+        $.ajax(
+			{
+				type: 'POST',
+				datatype: 'JSON',
+				url: '@Url.Action("Comodin5050","Home")',
+				success:
+					function (response)
+					{
+                        $('#5050').attr("src", "/assets/comodin2Usado.png");
+                        response.forEach(C => {
+                            $('#' + C).css("display", "none");
+                        })
 					}
 			}
 		)
