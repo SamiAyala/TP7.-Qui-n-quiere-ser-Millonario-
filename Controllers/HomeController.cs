@@ -67,7 +67,6 @@ public class HomeController : Controller
     }
 
     public IActionResult SiguientePreg(){
-        JuegoQQSM.ChequearPozoSeguro();
         JuegoQQSM.IncrementarPregYPozo();
         Jugador jug = JuegoQQSM.DevolverJugador();
         List<Pozo> listPozo = JuegoQQSM.DevolverPozo();
@@ -87,7 +86,8 @@ public class HomeController : Controller
     }
 
     public IActionResult ComodinSaltear(){
-        JuegoQQSM._player.comodinSaltear = false;
+        //JuegoQQSM._player.comodinSaltear = false;
+        JuegoQQSM.ComodinSaltear();
         return RedirectToAction("SiguientePreg","Home");
     }
 

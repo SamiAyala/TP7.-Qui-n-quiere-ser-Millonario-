@@ -14,7 +14,7 @@ namespace QuienQuiereSerMillonario.Models
         private static List<Pozo> _listaPozo;
         private static List<Pregunta> _listaPreguntas;
         public static Jugador _player;
-        private static string _connectionString=@"Server=A-PHZ2-CIDI-007;DataBase=JuegoQQSM;Trusted_Connection=True;";
+        private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
         public static void iniciarJuego(string pNombre){
             _preguntaActual=0;
             _respuestaCorrectaActual='\0';
@@ -103,9 +103,10 @@ namespace QuienQuiereSerMillonario.Models
             return null;
         }
         public static void ComodinSaltear(){
-            if (_player.comodinSaltear){
-                _player.comodinSaltear = false;
-                _preguntaActual++;
+            _player.comodinSaltear = false;
+            using(SqlConnection db=new SqlConnection(_connectionString)){
+                string sql="UPDATE Jugadores SET ComodinSaltear = @pComodinSaltear WHERE Nombre = @pNombre AND FechaHora = @pFechaHora";
+                db.Query<Jugador>(sql, new{@pComodinSaltear = _player.comodinSaltear, @pNombre = _player.nombre, @pFechaHora = _player.fechaHora});
             }
         }
         public static Jugador DevolverJugador() {
@@ -118,7 +119,7 @@ namespace QuienQuiereSerMillonario.Models
             using(SqlConnection db=new SqlConnection(_connectionString))
             {
                 string sql="UPDATE Jugadores SET PozoGanado = @pPozoGanado WHERE Nombre = @pNombre AND FechaHora = @pFechaHora";
-                db.Query<Respuesta>(sql, new{@pPozoGanado = pozoAcumuladoSeguro, @pNombre = jug.nombre, @pFechaHora = jug.fechaHora});
+                db.Query<Jugador>(sql, new{@pPozoGanado = pozoAcumuladoSeguro, @pNombre = jug.nombre, @pFechaHora = jug.fechaHora});
             }
         }
     }
