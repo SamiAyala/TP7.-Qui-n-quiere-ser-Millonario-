@@ -81,7 +81,7 @@
 
     function cargarDobleChance()
     {
-        dobleChance = '@ViewBag.kaka'; 
+        dobleChance = '@ViewBag.jug.comodinDobleChance'; 
     }
 
     function ChequearRespuesta(opcion) {
@@ -94,7 +94,6 @@
 				success:
 					function (response)
 					{
-                        var DobleChance = '@ViewBag.jug.comodinDobleChance';
 						if(response != null){
                             if(response) {
                                 $(".sigPreg").css("display", "block");
@@ -142,6 +141,7 @@
 					function (response)
 					{
                         alert("ok");
+                        DobleChance = 'False';
                         $('#DobleChance').attr("src", "/assets/comodin3Usado.png");
                         $('#' + opcion).css("background-color", "red");
 					}
