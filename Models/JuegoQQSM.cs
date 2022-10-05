@@ -14,7 +14,7 @@ namespace QuienQuiereSerMillonario.Models
         private static List<Pozo> _listaPozo;
         private static List<Pregunta> _listaPreguntas;
         public static Jugador _player;
-        private static string _connectionString=@"Server=A-PHZ2-AMI-007;DataBase=JuegoQQSM;Trusted_Connection=True;";
+        private static string _connectionString=@"Server=DESKTOP-BS3AF2L\SQLEXPRESS;DataBase=JuegoQQSM;Trusted_Connection=True;";
         public static void iniciarJuego(string pNombre){
             _preguntaActual=0;
             _respuestaCorrectaActual='\0';

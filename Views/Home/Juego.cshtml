@@ -81,7 +81,7 @@
 
     function cargarDobleChance()
     {
-        dobleChance = '@ViewBag.jug.comodinDobleChance'; 
+        DobleChance = '@ViewBag.jug.comodinDobleChance';
     }
 
     function ChequearRespuesta(opcion) {
@@ -101,7 +101,6 @@
                                 $(".cont-resp").css("display", "none");
                             } else {
                                 if (DobleChance == 'True') {
-                                    alert("COCK");
                                     ComodinDobleChance(opcion);
                                 } else {
                                     $(location).attr('href','@Url.Action("Derrota", "Home")');
@@ -140,7 +139,6 @@
 				success:
 					function (response)
 					{
-                        alert("ok");
                         DobleChance = 'False';
                         $('#DobleChance').attr("src", "/assets/comodin3Usado.png");
                         $('#' + opcion).css("background-color", "red");
